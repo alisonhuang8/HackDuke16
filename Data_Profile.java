@@ -7,7 +7,7 @@ public class Data_Profile {
 	private double multiplier;
 	
 	
-	
+	//Basic parameters of users...should be changed later
 	public Data_Profile(String name1, String netid1, String charity, int uniqueId1, double foodBalance1, double multiplier1){
 		name = name1;
 		netid = netid1;
@@ -16,7 +16,7 @@ public class Data_Profile {
 		multiplier = multiplier1;
 		
 	}
-	
+	// Prints User Information
 	public void printFunc(){
 		System.out.println("");
 		System.out.println("Name: "+ name);
@@ -28,13 +28,15 @@ public class Data_Profile {
 		System.out.println("");
 		
 	}
-	
+	//main function
 	public static void main(String[] args){
 		String[] names = {"Stu", "Noa", "Jeff", "Ali", "Mark", "Bill", "Peter"};
 		String[] charities = {"A", "B","C","D","E"};
 		int id = 1;
 		
-		for (int i = 0; i <20; i++){
+		int n = 20;
+		// generates n test cases, number values can be changed. 
+		for (int i = 0; i <n; i++){
 			int num = 1+(int)(Math.random()*4);
 			int num2 = 1+(int)(Math.random()*4);
 			double balance = 1 + (Math.random()*100000);
