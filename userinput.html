@@ -1,8 +1,5 @@
 <html>
-
-  <script type="text/javascript">
-  $('input').serializeArray()
-  </script>
+<body>
 
 
 <div class="container">  
@@ -14,7 +11,7 @@
    
     <fieldset>
     Which charity would you like to donate to?
-    <select name = "charity" type = "submit">
+    <select name = "charity" id = "org" type = "submit">
       <option value = "dwb">Doctors without Borders</option>
       <option value = "rcf">Red Cross Foundation</option>
       <option value = "hs">Humane Society</option>
@@ -35,6 +32,9 @@
 
 </div>
 
+
+<script src="transAlg.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -46,8 +46,6 @@
     messagingSenderId: "1038657492144"
   };
   firebase.initializeApp(config);
-
-  var whichcharity = document. 
 </script>
-
+</body>
 </html>
