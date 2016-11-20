@@ -7,12 +7,12 @@ CHAR = charity ID number 1-5
 
 */
 
-function transaction(FP, IDA, cap, DC, charID, funds){
+function transaction(FP, IDA, cap, DC){
 
 	var X = Math.floor((Math.random()*100)+1);
 	var donation;
 
-	if(DC >= CAP){
+	if(DC >= cap){
 		FP = FP - X;
 		return 0;
 	} else {
