@@ -11,7 +11,7 @@
    
     <fieldset>
     Which charity would you like to donate to?
-    <select name = "charity" id = "org" type = "submit">
+    <select name = "charity" type = "submit">
       <option value = "dwb">Doctors without Borders</option>
       <option value = "rcf">Red Cross Foundation</option>
       <option value = "hs">Humane Society</option>
@@ -22,7 +22,7 @@
 
     <fieldset>
       Enter the cap on the number of dollars you want to donate in a day: 
-      <input type="number" min = "1" max = "5" name = "donationcap" id = "cap" tabindex="2" required> 
+      <input type="number" min = "1" max = "5" name = "donationcap" id = "cap" onclick="doIt()" tabindex="2" required> 
     </fieldset>
 
     <!--<button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>-->
@@ -32,20 +32,69 @@
 
 </div>
 
-
-<script src="transAlg.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+
 <script>
   // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
   var config = {
-    apiKey: "AIzaSyBAiR6ywGhZNpZcNBaBDrZNC13mwkWAJpA",
-    authDomain: "duke-food-points-charity.firebaseapp.com",
-    databaseURL: "https://duke-food-points-charity.firebaseio.com",
-    storageBucket: "duke-food-points-charity.appspot.com",
-    messagingSenderId: "1038657492144"
+    apiKey: "AIzaSyBhcId41U0xXpQCtEuLuP0_xaUv6UpT8cM",
+    authDomain: "hackduke16.firebaseapp.com",
+    databaseURL: "https://hackduke16.firebaseio.com",
+    storageBucket: "hackduke16.appspot.com",
+    messagingSenderId: "964656279742",
   };
   firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+function doIt(){
+
+var cap = document.getElementById("cap").value;
+
+
+function transaction(FP, IDA, cap, DC){
+
+  /*ap = document.getElementById("cap").value;*/
+  var X = Math.random()*100+1;
+  //console.log(X);
+  var donation;
+
+  if(DC >= cap){
+    FP = FP - X;
+    return 0;
+  } else {
+    donation = Math.ceil(X) - X;
+
+    if(donation > (cap - DC)){
+      donation = (cap - DC);
+    }
+    FP -= (X + donation);
+    IDA += donation;
+    DC += donation;
+    donation = Math.round(donation*100)/100;
+    //console.log(donation);
+    return donation;
+
+
+  }
+  //console.log(0);
+  return 0; 
+}
+//console.log(cap)
+
+function writeDonation(){
+  firebase.database().ref('alison').set({
+    amount: transaction(2000,50,cap,0)
+  })
+}
+
+writeDonation();
+
+}
+
+
 </script>
 </body>
+
 </html>

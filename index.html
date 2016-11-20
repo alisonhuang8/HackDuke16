@@ -1,38 +1,51 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Flat UI Login Form 2</title>
+  <title>Volunteasy</title>
   
       <link rel="stylesheet" href="style.css">
   
 </head>
-</
+
 <body>
   <div id="login">
   <h1 id="header">Login</h1>
   <form method = "link" action="userinput.html">
     <input type="text" placeholder="Username" id="username"></input><br />
-    <input type="password" placeholder="Password"></input><br />
-    <button id="button">Submit</button> 
-   <!-- <button onclick="location.href = 'www.yoursite.com';" id="myButton" class="float-left submit-button" >Home</button> -->
+    <input type="password" placeholder="Password" id="pass"></input><br />
+    <button id="button" onclick="writeUserData()" >Submit</button> 
   </form>
 </div>
-  
-    <script src="js/index.js"></script>
 
-</body>
-
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 <script>
   // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
   var config = {
-    apiKey: "AIzaSyBAiR6ywGhZNpZcNBaBDrZNC13mwkWAJpA",
-    authDomain: "duke-food-points-charity.firebaseapp.com",
-    databaseURL: "https://duke-food-points-charity.firebaseio.com",
-    storageBucket: "duke-food-points-charity.appspot.com",
-    messagingSenderId: "1038657492144"
+    apiKey: "AIzaSyBhcId41U0xXpQCtEuLuP0_xaUv6UpT8cM",
+    authDomain: "hackduke16.firebaseapp.com",
+    databaseURL: "https://hackduke16.firebaseio.com",
+    storageBucket: "hackduke16.appspot.com",
+    messagingSenderId: "964656279742",
   };
   firebase.initializeApp(config);
 
+  var database = firebase.database();
+
+  function writeUserData() {
+    var us = document.getElementById("username").value;
+    var pa = document.getElementById("pass").value;
+    firebase.database().ref('netID/' + us).set({
+      password: pa
+     });
+  }
+
+// var us = document.getElementById("username").value;
+// var pa = document.getElementById("pass").value;
+
+
 </script>
+
+</body>
 </html>
