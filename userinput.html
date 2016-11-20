@@ -1,25 +1,52 @@
+<html>
+
+  <script type="text/javascript">
+  $('input').serializeArray()
+  </script>
+
+
 <div class="container">  
-  <form id="contact" action="" method="post">
+
+  <form id="DukeInput" action="" method="post">
+
     <h3>Duke Food Points Donation Plan</h3>
     <h4>You currently have 1900 food points</h4>
+   
     <fieldset>
-      <input placeholder="Your name" type="text" tabindex="1" required autofocus>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Your Email Address" type="email" tabindex="2" required>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
-    </fieldset>
-    <fieldset>
-      <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    Which charity would you like to donate to?
+    <select name = "Which Charity?">
+      <option>Doctors without Borders</option>
+      <option>Red Cross Foundation</option>
+    </select>
     </fieldset>
 
+    <fieldset>
+      Enter the cap on the number of dollars you want to donate in a day: 
+      <input placeholder= "between $1 and $5" type="number" min = "1" max = "5" name = "donationcap" tabindex="2" required> 
+    </fieldset>
+
+    <!-- <fieldset>
+      <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+    </fieldset>
+
+    <fieldset>
+      <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
+    </fieldset> -->
+
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset> 
+
   </form>
+
 </div>
+
+<script>
+  function showValues() {
+    var str = $( "DukeInput" ).serialize();
+    $( "#results" ).text( str );
+  }
+  showValues();
+</script>
+
+</html>
