@@ -3,31 +3,37 @@
 
 /* sets background image and global font */
 body {
-  background-image: url(http://benague.ca/files/congruent_outline.png);
-  font-family: 'Open Sans', 'sans-serif';
+  background-image: url(https://c1.staticflickr.com/9/8532/8618443555_9978f50442_b.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 
 /* div surrounding login form */
 #login {
-  background-color: #eee;
-  opacity: .9;
+  background: url(http://benague.ca/files/congruent_outline.png);
+  background-color: #005bb6;
+  opacity: 1;
   height: 280px;
-  width: 400px;
-  border-radius: 10px;
+  width: 500px;
+  border-radius: 30px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 160px;
   padding: 0;
   text-align: center;
 }
 
 /* form header */
 h1 {
-  font-size: 32px;
-  padding: 10px;
+  font-size: 38px;
+  padding: 12px;
   margin: 0;
   color: #fff;
-  background-color: #55acee;
-  margin-bottom: 15px;
+  background-color: #00009c;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 /* text fields */
@@ -41,19 +47,19 @@ input:not([type="button"]) {
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   transition: all .5s;
-  font-family: 'Open Sans', 'sans-serif';
+  font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 
 input:not([type="button"]):focus {
-  color: #55acee;
-  width: 370px;
+  color: #005bb6;
+  width: 350px;
   border: 1px solid #55acee;
   outline: none;
 }
 
 /* submit button */
 input[type="button"] {
-  font-size: 32px;
+  font-size: 42px;
   color: #fff;
   background-color: #55acee;
   box-shadow: 0 5px 0 0 #3C93D5;
@@ -63,8 +69,9 @@ input[type="button"] {
   display: inline-block;
   position: relative;
   outline: none;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 
 input[type="button"]:active {
