@@ -7,46 +7,47 @@
 
 <div class="container">  
 
-  <form id="DukeInput" action="" method="post">
+  <form id="DukeInput" action="process.php" method="post">
 
     <h3>Duke Food Points Donation Plan</h3>
     <h4>You currently have 1900 food points</h4>
    
     <fieldset>
     Which charity would you like to donate to?
-    <select name = "Which Charity?">
-      <option>Doctors without Borders</option>
-      <option>Red Cross Foundation</option>
+    <select name = "charity" type = "submit">
+      <option value = "dwb">Doctors without Borders</option>
+      <option value = "rcf">Red Cross Foundation</option>
+      <option value = "hs">Humane Society</option>
+      <option value = "acs">American Cancer Society</option>
+      <option>Teach for America</option>
     </select>
     </fieldset>
 
     <fieldset>
       Enter the cap on the number of dollars you want to donate in a day: 
-      <input placeholder= "between $1 and $5" type="number" min = "1" max = "5" name = "donationcap" tabindex="2" required> 
+      <input type="number" min = "1" max = "5" name = "donationcap" id = "cap" tabindex="2" required> 
     </fieldset>
 
-    <!-- <fieldset>
-      <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
-    </fieldset>
-
-    <fieldset>
-      <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
-    </fieldset> -->
-
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-    </fieldset> 
+    <!--<button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>-->
+    <input type="submit">
 
   </form>
 
 </div>
 
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 <script>
-  function showValues() {
-    var str = $( "DukeInput" ).serialize();
-    $( "#results" ).text( str );
-  }
-  showValues();
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBAiR6ywGhZNpZcNBaBDrZNC13mwkWAJpA",
+    authDomain: "duke-food-points-charity.firebaseapp.com",
+    databaseURL: "https://duke-food-points-charity.firebaseio.com",
+    storageBucket: "duke-food-points-charity.appspot.com",
+    messagingSenderId: "1038657492144"
+  };
+  firebase.initializeApp(config);
+
+  var whichcharity = document. 
 </script>
 
 </html>
